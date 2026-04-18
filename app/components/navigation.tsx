@@ -15,34 +15,36 @@ export function Navigation() {
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-        scrolled ? 'bg-bone/85 backdrop-blur-md' : ''
+        scrolled
+          ? 'bg-bone/90 backdrop-blur-md border-b border-ink/8'
+          : ''
       }`}
     >
-      <div className="mx-auto flex max-w-[1800px] items-center justify-between px-5 py-4 md:px-10 md:py-5">
-        <Link href="/" className="spec flex items-center gap-2 text-ink">
-          <span className="inline-block h-1.5 w-1.5 rounded-full bg-signal" />
-          Finn Bennett / N-01
+      <div className="mx-auto flex max-w-[1800px] items-center justify-between px-5 py-5 md:px-10 md:py-6">
+        <Link href="/" className="font-display text-base font-semibold tracking-tight text-ink hover:text-signal transition-colors">
+          Finn Bennett
         </Link>
-        <nav className="hidden items-center gap-8 md:flex">
-          <Link href="/#ground" className="spec text-ink/70 hover:text-ink">
-            Ground
-          </Link>
-          <Link href="/#studio" className="spec text-ink/70 hover:text-ink">
-            Studio
-          </Link>
-          <Link href="/#flight" className="spec text-ink/70 hover:text-ink">
-            Flight
-          </Link>
-          <Link href="/about" className="spec text-ink/70 hover:text-ink">
-            About
-          </Link>
+        <nav className="hidden items-center gap-10 md:flex">
+          {[
+            { href: '/#ground', label: 'Ground' },
+            { href: '/#studio', label: 'Studio' },
+            { href: '/#flight', label: 'Flight' },
+            { href: '/about', label: 'About' },
+          ].map(({ href, label }) => (
+            <Link
+              key={href}
+              href={href}
+              className="text-sm font-medium text-ink/60 hover:text-ink transition-colors"
+            >
+              {label}
+            </Link>
+          ))}
         </nav>
         <a
           href="mailto:finn@overlook.studio"
-          className="spec flex items-center gap-2 text-ink"
+          className="inline-flex items-center gap-1.5 rounded-full border border-ink/20 px-4 py-1.5 text-sm font-medium text-ink hover:border-ink/60 hover:bg-ink hover:text-white transition-all duration-200"
         >
-          <span className="hidden md:inline">Contact</span>
-          <span aria-hidden>↗</span>
+          Contact ↗
         </a>
       </div>
     </header>
