@@ -3,17 +3,9 @@ export function Manifesto({ text }: { text?: string }) {
   return (
     <section className="bg-bone px-5 py-24 md:px-10 md:py-40">
       <div className="mx-auto max-w-4xl">
-        <p className="spec mb-6 text-ink/50">MSN / Manifesto</p>
-        <p className="font-display text-3xl leading-[1.15] tracking-tight md:text-5xl md:leading-[1.1]">
-          {text.split(' ').map((word, i) => {
-            // italicize a few key verbs for emphasis
-            const emphasized = ['build', 'builds', 'build.', 'fly', 'flies', 'think', 'records', 'cockpit'];
-            const clean = word.toLowerCase().replace(/[.,;:]/, '');
-            if (emphasized.includes(clean)) {
-              return <span key={i} className="italic text-signal">{word} </span>;
-            }
-            return <span key={i}>{word} </span>;
-          })}
+        <p className="spec mb-8 text-ink/30">About</p>
+        <p className="font-display text-3xl font-semibold leading-[1.2] tracking-tight text-ink md:text-5xl md:leading-[1.15]">
+          {text}
         </p>
       </div>
     </section>

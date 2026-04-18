@@ -1,22 +1,23 @@
 import type { Metadata } from 'next';
-import { Instrument_Serif, Inter, JetBrains_Mono } from 'next/font/google';
+import { Syne, DM_Sans, Space_Mono } from 'next/font/google';
 import './globals.css';
 
-const display = Instrument_Serif({
+// Syne is a variable font — all weights (400–800) load by default; no explicit weight needed
+const display = Syne({
   subsets: ['latin'],
-  weight: '400',
   variable: '--font-display',
   display: 'swap',
 });
 
-const sans = Inter({
+const sans = DM_Sans({
   subsets: ['latin'],
   variable: '--font-sans',
   display: 'swap',
 });
 
-const mono = JetBrains_Mono({
+const mono = Space_Mono({
   subsets: ['latin'],
+  weight: ['400', '700'],
   variable: '--font-mono',
   display: 'swap',
 });

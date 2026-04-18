@@ -19,7 +19,7 @@ export function HorizontalMoments({ moments }: { moments: Moment[] }) {
           <div className="flex h-[70vh] w-[90vw] flex-shrink-0 flex-col justify-between md:w-[60vw]">
             <p className="spec text-ink/60">Field Notes / 2023 — Present</p>
             <div>
-              <h2 className="font-display text-giga italic leading-none tracking-crushed">
+              <h2 className="font-display text-giga tracking-crushed" style={{ lineHeight: 0.9 }}>
                 Moments
                 <br />
                 <span className="not-italic text-ink/30">from three altitudes.</span>
