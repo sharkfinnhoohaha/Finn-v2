@@ -1,4 +1,4 @@
-import { defineField, defineType } from 'sanity';
+import { defineArrayMember, defineField, defineType } from 'sanity';
 
 export default defineType({
   name: 'settings',
@@ -13,13 +13,16 @@ export default defineType({
       name: 'social',
       type: 'array',
       of: [
-        {
+        defineArrayMember({
           type: 'object',
           fields: [
-            { name: 'label', type: 'string' },
-            { name: 'url', type: 'url' },
+            defineField({ name: 'label', type: 'string', title: 'Label', validation: (r) => r.required() }),
+            defineField({ name: 'url', type: 'url', title: 'URL', validation: (r) => r.required() }),
           ],
-        },
+          preview: {
+            select: { title: 'label', subtitle: 'url' },
+          },
+        }),
       ],
     }),
     defineField({

@@ -1,4 +1,4 @@
-import { defineField, defineType } from 'sanity';
+import { defineArrayMember, defineField, defineType } from 'sanity';
 
 export default defineType({
   name: 'altitude',
@@ -44,16 +44,16 @@ export default defineType({
       title: 'Spec Stats',
       type: 'array',
       of: [
-        {
+        defineArrayMember({
           type: 'object',
           fields: [
-            { name: 'label', type: 'string' },
-            { name: 'value', type: 'string' },
+            defineField({ name: 'label', type: 'string', title: 'Label', validation: (r) => r.required() }),
+            defineField({ name: 'value', type: 'string', title: 'Value', validation: (r) => r.required() }),
           ],
           preview: {
             select: { title: 'label', subtitle: 'value' },
           },
-        },
+        }),
       ],
     }),
     defineField({ name: 'order', type: 'number', hidden: true, initialValue: 0 }),

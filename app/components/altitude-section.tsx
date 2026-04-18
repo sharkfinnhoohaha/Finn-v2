@@ -69,14 +69,15 @@ export function AltitudeSection({ altitude }: { altitude: Altitude }) {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: '-20%' }}
             transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
-            className={`font-display text-giga leading-[0.82] tracking-crushed ${
+            className={`font-display text-giga tracking-crushed ${
               isStudio ? 'italic' : ''
             }`}
+            style={{ lineHeight: 0.9 }}
           >
             {altitude.title}
             {altitude.subtitle && (
               <span
-                className={`block text-5xl not-italic md:text-7xl ${
+                className={`mt-2 block text-4xl not-italic leading-tight tracking-tight md:text-6xl ${
                   isFlight ? 'text-bone/40' : 'text-ink/30'
                 }`}
               >
