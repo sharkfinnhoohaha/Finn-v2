@@ -12,6 +12,11 @@ export function Manifesto({ text }: { text?: string }) {
             if (emphasized.includes(clean)) {
               return <span key={i} className="italic text-signal">{word} </span>;
             }
+            // secondary emphasis on nouns — acid highlight marker
+            const highlighted = ['altitude', 'altitudes', 'studio', 'studio.', 'ground', 'ground.', 'air', 'air.'];
+            if (highlighted.includes(clean)) {
+              return <span key={i} className="hl-acid">{word} </span>;
+            }
             return <span key={i}>{word} </span>;
           })}
         </p>

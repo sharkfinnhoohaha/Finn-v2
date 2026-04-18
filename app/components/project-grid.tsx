@@ -8,7 +8,7 @@ export function ProjectGrid({ projects }: { projects: Project[] }) {
       <div className="mx-auto max-w-[1800px]">
         <div className="mb-10 flex items-end justify-between md:mb-16">
           <div>
-            <p className="spec mb-3 text-ink/50">ALT-01 / Selected Work</p>
+            <p className="spec mb-3 text-ink/50">01 / selected work</p>
             <h3 className="font-display text-5xl leading-[0.9] tracking-tightest md:text-7xl">
               From the <span className="italic">ground</span>.
             </h3>
@@ -62,7 +62,10 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
           {project.stack && project.stack.length > 0 && (
             <ul className="mt-3 flex flex-wrap gap-2">
               {project.stack.map((t) => (
-                <li key={t} className="spec rounded-full border border-ink/20 px-2 py-0.5 text-ink/60">
+                <li
+                  key={t}
+                  className="spec rounded-full border border-ink/20 bg-bone-200/40 px-2.5 py-0.5 text-ink/70 transition-colors group-hover:border-ink/60"
+                >
                   {t}
                 </li>
               ))}

@@ -19,7 +19,7 @@ export default async function AboutPage() {
   return (
     <article className="bg-bone px-5 pt-32 pb-24 md:px-10 md:pt-40 md:pb-32">
       <div className="mx-auto max-w-[1800px]">
-        <p className="spec mb-6 text-ink/50">MSN / Colophon</p>
+        <p className="spec mb-6 text-ink/50">index/colophon</p>
         <h1 className="font-display text-giga leading-[0.85] tracking-crushed">
           About<span className="text-signal">.</span>
         </h1>
@@ -63,7 +63,7 @@ export default async function AboutPage() {
             <p className="spec mb-4 text-ink/50">Colophon</p>
             <p className="text-base text-ink/70">
               Built with Next.js 14, Sanity, Framer Motion, and Lenis smooth scroll. Typography:
-              Instrument Serif (display), Inter (body), JetBrains Mono (specs). Hosted on Vercel.
+              Fraunces (display), Space Grotesk (body), JetBrains Mono (specs). Hosted on Vercel.
               Film grain is synthetic.
             </p>
           </div>

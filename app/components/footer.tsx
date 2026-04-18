@@ -26,7 +26,8 @@ export async function Footer() {
           <p className="spec mb-6 text-bone/60">Contact / 34.2749°N 119.2290°W</p>
           <h2 className="font-display text-mega text-bone">
             Let&rsquo;s<br />
-            <span className="italic text-signal">fly.</span>
+            <span className="italic text-acid">make</span>{' '}
+            <span className="italic text-signal">something</span>.
           </h2>
           <div className="mt-10 grid gap-8 md:grid-cols-3">
             <div>

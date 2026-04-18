@@ -5,13 +5,13 @@ import { motion } from 'framer-motion';
 export function Hero({ tagline, location }: { tagline?: string; location?: string }) {
   return (
     <section className="relative min-h-screen overflow-hidden pt-24 md:pt-32">
-      {/* top spec row - aviation instrument style */}
+      {/* top spec row */}
       <div className="mx-auto flex max-w-[1800px] items-start justify-between px-5 pb-10 md:px-10">
         <div className="grid grid-cols-2 gap-x-8 gap-y-2 md:grid-cols-4">
-          <SpecReadout label="Heading" value="348°" />
-          <SpecReadout label="Based" value={location || 'VTA, CA'} />
+          <SpecReadout label="v" value="2026.1" />
+          <SpecReadout label="Based" value={location || 'Ventura, CA'} />
           <SpecReadout label="Altitude" value="Three" />
-          <SpecReadout label="Year" value="2026" />
+          <SpecReadout label="Status" value="Online" live />
         </div>
       </div>
 
@@ -35,7 +35,7 @@ export function Hero({ tagline, location }: { tagline?: string; location?: strin
             transition={{ duration: 0.9, delay: 0.3 }}
             className="md:col-span-5 md:col-start-1"
           >
-            <p className="spec mb-3 text-ink/60">MSN / 0001</p>
+            <p className="spec mb-3 text-ink/60">index/001 — intro</p>
             <p className="text-xl leading-snug text-ink md:text-2xl">
               {tagline || 'Builds at altitude.'}
             </p>
@@ -79,11 +79,14 @@ export function Hero({ tagline, location }: { tagline?: string; location?: strin
   );
 }
 
-function SpecReadout({ label, value }: { label: string; value: string }) {
+function SpecReadout({ label, value, live }: { label: string; value: string; live?: boolean }) {
   return (
     <div className="flex flex-col border-l border-ink/15 pl-3">
       <span className="spec text-ink/40">{label}</span>
-      <span className="spec mt-0.5 text-ink">{value}</span>
+      <span className="spec mt-0.5 flex items-center gap-1.5 text-ink">
+        {live && <span className="live-dot inline-block h-1.5 w-1.5 rounded-full bg-signal" />}
+        {value}
+      </span>
     </div>
   );
 }

@@ -6,21 +6,29 @@ const config: Config = {
     extend: {
       colors: {
         ink: {
-          DEFAULT: '#0C0C0B',
-          950: '#0C0C0B',
-          900: '#141412',
-          800: '#1E1E1B',
-          700: '#2A2A26',
+          DEFAULT: '#0A0A0A',
+          950: '#0A0A0A',
+          900: '#131312',
+          800: '#1C1C1A',
+          700: '#2A2A27',
         },
         bone: {
-          DEFAULT: '#F1EDE4',
-          100: '#F1EDE4',
-          200: '#E8E2D4',
-          300: '#C9C2B2',
+          DEFAULT: '#F2EFE7',
+          100: '#F2EFE7',
+          200: '#E7E2D4',
+          300: '#C7C1B1',
         },
         signal: {
-          DEFAULT: '#FF6B1A',
-          soft: '#E8A66B',
+          DEFAULT: '#FF3B2F',
+          soft: '#FFB4AC',
+        },
+        acid: {
+          DEFAULT: '#E6FF48',
+          soft: '#F0FF9E',
+        },
+        plum: {
+          DEFAULT: '#3B2DE6',
+          soft: '#B7B0FF',
         },
       },
       fontFamily: {

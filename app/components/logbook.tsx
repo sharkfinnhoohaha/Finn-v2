@@ -9,9 +9,9 @@ export function Logbook({ entries }: { entries: LogbookEntry[] }) {
       <div className="mx-auto max-w-[1800px]">
         <div className="mb-10 flex items-end justify-between md:mb-16">
           <div>
-            <p className="spec mb-3 text-ink/50">ALT-03 / Recent Logbook</p>
+            <p className="spec mb-3 text-ink/50">03 / recent logbook</p>
             <h3 className="font-display text-5xl leading-[0.9] tracking-tightest md:text-7xl">
-              From the <span className="italic">air</span>.
+              From the <span className="italic text-plum">air</span>.
             </h3>
           </div>
           <div className="hidden text-right md:block">

@@ -1,15 +1,14 @@
 import type { Metadata } from 'next';
-import { Instrument_Serif, Inter, JetBrains_Mono } from 'next/font/google';
+import { Fraunces, Space_Grotesk, JetBrains_Mono } from 'next/font/google';
 import './globals.css';
 
-const display = Instrument_Serif({
+const display = Fraunces({
   subsets: ['latin'],
-  weight: '400',
   variable: '--font-display',
   display: 'swap',
 });
 
-const sans = Inter({
+const sans = Space_Grotesk({
   subsets: ['latin'],
   variable: '--font-sans',
   display: 'swap',

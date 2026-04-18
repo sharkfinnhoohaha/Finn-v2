@@ -7,9 +7,9 @@ export function ReleaseRack({ releases }: { releases: Release[] }) {
       <div className="mx-auto max-w-[1800px]">
         <div className="mb-10 flex items-end justify-between md:mb-16">
           <div>
-            <p className="spec mb-3 text-bone/50">ALT-02 / Recent Releases</p>
+            <p className="spec mb-3 text-bone/50">02 / recent releases</p>
             <h3 className="font-display text-5xl leading-[0.9] tracking-tightest md:text-7xl">
-              From the <span className="italic text-signal">studio</span>.
+              From the <span className="italic text-acid">studio</span>.
             </h3>
           </div>
         </div>
@@ -72,7 +72,7 @@ function ReleaseRow({ release, index }: { release: Release; index: number }) {
             href={release.listenUrl}
             target="_blank"
             rel="noreferrer"
-            className="spec inline-flex items-center gap-1 text-bone/80 hover:text-signal"
+            className="spec inline-flex items-center gap-1 text-bone/80 hover:text-acid"
           >
             Listen ↗
           </a>

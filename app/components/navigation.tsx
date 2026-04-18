@@ -20,8 +20,8 @@ export function Navigation() {
     >
       <div className="mx-auto flex max-w-[1800px] items-center justify-between px-5 py-4 md:px-10 md:py-5">
         <Link href="/" className="spec flex items-center gap-2 text-ink">
-          <span className="inline-block h-1.5 w-1.5 rounded-full bg-signal" />
-          Finn Bennett / N-01
+          <span className="live-dot inline-block h-1.5 w-1.5 rounded-full bg-signal" />
+          Finn Bennett — v2026
         </Link>
         <nav className="hidden items-center gap-8 md:flex">
           <Link href="/#ground" className="spec text-ink/70 hover:text-ink">

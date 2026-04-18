@@ -7,13 +7,16 @@ export function NowTicker({ items }: { items?: string[] }) {
   const loop = [...items, ...items];
 
   return (
-    <section className="overflow-hidden border-t border-b border-ink/15 bg-bone py-5">
-      <div className="marquee-track flex items-center gap-16 whitespace-nowrap">
+    <section className="overflow-hidden border-t border-b border-ink/15 bg-ink py-5 text-bone">
+      <div className="marquee-track flex items-center gap-12 whitespace-nowrap">
         {loop.map((item, i) => (
-          <div key={i} className="flex items-center gap-16">
-            <span className="spec text-signal">NOW</span>
-            <span className="text-base text-ink">{item}</span>
-            <span className="text-ink/30">✦</span>
+          <div key={i} className="flex items-center gap-12">
+            <span className="spec flex items-center gap-2 text-acid">
+              <span className="live-dot inline-block h-1.5 w-1.5 rounded-full bg-acid" />
+              Now Playing
+            </span>
+            <span className="text-base text-bone/90">{item}</span>
+            <span className="text-bone/30">/</span>
           </div>
         ))}
       </div>
