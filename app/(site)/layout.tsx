@@ -1,6 +1,6 @@
-import { SmoothScroll } from '../components/smooth-scroll';
-import { Navigation } from '../components/navigation';
-import { Footer } from '../components/footer';
+import { SmoothScroll } from '@/app/components/smooth-scroll';
+import { Navigation } from '@/app/components/navigation';
+import { Footer } from '@/app/components/footer';
 
 export default function SiteLayout({ children }: { children: React.ReactNode }) {
   return (

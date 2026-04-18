@@ -10,9 +10,9 @@ import {
   FALLBACK_RELEASES,
 } from '@/lib/fallback';
 import type { Altitude, LogbookEntry, Project, Release } from '@/lib/types';
-import { ProjectGrid } from '../../../components/project-grid';
-import { ReleaseRack } from '../../../components/release-rack';
-import { Logbook } from '../../../components/logbook';
+import { ProjectGrid } from '@/app/components/project-grid';
+import { ReleaseRack } from '@/app/components/release-rack';
+import { Logbook } from '@/app/components/logbook';
 
 type Params = { slug: 'ground' | 'studio' | 'flight' };
 

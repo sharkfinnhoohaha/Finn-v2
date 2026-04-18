@@ -24,14 +24,14 @@ import {
   FALLBACK_SETTINGS,
 } from '@/lib/fallback';
 
-import { Hero } from './components/hero';
-import { HorizontalMoments } from './components/horizontal-moments';
-import { AltitudeSection } from './components/altitude-section';
-import { ProjectGrid } from './components/project-grid';
-import { ReleaseRack } from './components/release-rack';
-import { Logbook } from './components/logbook';
-import { NowTicker } from './components/now-ticker';
-import { Manifesto } from './components/manifesto';
+import { Hero } from '@/app/components/hero';
+import { HorizontalMoments } from '@/app/components/horizontal-moments';
+import { AltitudeSection } from '@/app/components/altitude-section';
+import { ProjectGrid } from '@/app/components/project-grid';
+import { ReleaseRack } from '@/app/components/release-rack';
+import { Logbook } from '@/app/components/logbook';
+import { NowTicker } from '@/app/components/now-ticker';
+import { Manifesto } from '@/app/components/manifesto';
 
 export const revalidate = 60;
 
