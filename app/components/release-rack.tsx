@@ -7,9 +7,9 @@ export function ReleaseRack({ releases }: { releases: Release[] }) {
       <div className="mx-auto max-w-[1800px]">
         <div className="mb-10 flex items-end justify-between md:mb-16">
           <div>
-            <p className="spec mb-3 text-bone/40">Recent Releases</p>
-            <h3 className="font-display text-5xl font-semibold tracking-tightest md:text-7xl" style={{ lineHeight: 0.95 }}>
-              From the <span className="text-signal">studio</span>.
+            <p className="spec mb-3 text-bone/50">02 / recent releases</p>
+            <h3 className="font-display text-5xl leading-[0.9] tracking-tightest md:text-7xl">
+              From the <span className="italic text-acid">studio</span>.
             </h3>
           </div>
         </div>
@@ -29,7 +29,7 @@ function ReleaseRow({ release, index }: { release: Release; index: number }) {
   const idx = String(index + 1).padStart(2, '0');
   return (
     <li className="group relative grid items-center gap-6 py-6 md:grid-cols-12 md:gap-10 md:py-8">
-      <span className="spec text-bone/40 md:col-span-1">{idx}</span>
+      <span className="spec text-bone/40 md:col-span-1">0{idx}</span>
 
       <div className="relative aspect-square w-24 overflow-hidden bg-bone/5 md:col-span-2 md:w-full">
         {release.artwork?.url ? (
@@ -48,10 +48,10 @@ function ReleaseRow({ release, index }: { release: Release; index: number }) {
       </div>
 
       <div className="md:col-span-5">
-        <h4 className="font-display text-2xl font-semibold tracking-tight md:text-4xl">
+        <h4 className="font-display text-3xl leading-tight md:text-5xl">
           {release.title}
         </h4>
-        <p className="spec mt-2 text-bone/50">
+        <p className="spec mt-2 text-bone/60">
           {release.role}
           {release.kind ? ` · ${release.kind.toUpperCase()}` : ''}
         </p>
@@ -72,7 +72,7 @@ function ReleaseRow({ release, index }: { release: Release; index: number }) {
             href={release.listenUrl}
             target="_blank"
             rel="noreferrer"
-            className="spec inline-flex items-center gap-1 text-bone/80 hover:text-signal"
+            className="spec inline-flex items-center gap-1 text-bone/80 hover:text-acid"
           >
             Listen ↗
           </a>

@@ -54,9 +54,9 @@ function MomentCard({ moment, index }: { moment: Moment; index: number }) {
   const w = widths[index % widths.length];
   const altColor =
     moment.altitude === 'flight'
-      ? 'text-signal'
+      ? 'text-plum'
       : moment.altitude === 'studio'
-      ? 'text-ink'
+      ? 'text-signal'
       : moment.altitude === 'ground'
       ? 'text-ink'
       : 'text-ink/60';

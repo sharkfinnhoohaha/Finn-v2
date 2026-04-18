@@ -9,3 +9,4 @@ node_modules
 .sanity
 sanity/schema.json
 sanity.types.ts
+tsconfig.tsbuildinfo

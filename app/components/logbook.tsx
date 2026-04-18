@@ -9,16 +9,16 @@ export function Logbook({ entries }: { entries: LogbookEntry[] }) {
       <div className="mx-auto max-w-[1800px]">
         <div className="mb-10 flex items-end justify-between md:mb-16">
           <div>
-            <p className="spec mb-3 text-ink/30">Recent Logbook</p>
-            <h3 className="font-display text-5xl font-semibold tracking-tightest md:text-7xl" style={{ lineHeight: 0.95 }}>
-              From the air.
+            <p className="spec mb-3 text-ink/50">03 / recent logbook</p>
+            <h3 className="font-display text-5xl leading-[0.9] tracking-tightest md:text-7xl">
+              From the <span className="italic text-plum">air</span>.
             </h3>
           </div>
           <div className="hidden text-right md:block">
-            <p className="spec text-ink/30">Entries</p>
-            <p className="font-display text-3xl font-semibold">{entries.length}</p>
-            <p className="spec mt-3 text-ink/30">Hours</p>
-            <p className="font-display text-3xl font-semibold">{totalHours.toFixed(1)}</p>
+            <p className="spec text-ink/50">Entries shown</p>
+            <p className="font-display text-4xl">{entries.length}</p>
+            <p className="spec mt-2 text-ink/50">Hours</p>
+            <p className="font-display text-4xl">{totalHours.toFixed(1)}</p>
           </div>
         </div>
 

@@ -20,38 +20,36 @@ export async function Footer() {
 
   return (
     <footer className="bg-ink text-bone">
-      {/* CTA block */}
-      <section className="relative border-b border-bone/10 px-5 pt-20 pb-14 md:px-10 md:pt-28">
+      {/* giant final mark */}
+      <section className="relative border-b border-bone/10 px-5 pt-20 pb-12 md:px-10 md:pt-28">
         <div className="mx-auto max-w-[1800px]">
-          <p className="spec mb-6 text-bone/40">Get in touch</p>
-          <h2 className="font-display text-mega text-bone" style={{ lineHeight: 0.88 }}>
+          <p className="spec mb-6 text-bone/60">Contact / 34.2749°N 119.2290°W</p>
+          <h2 className="font-display text-mega text-bone">
             Let&rsquo;s<br />
-            <span className="text-signal">fly.</span>
+            <span className="italic text-acid">make</span>{' '}
+            <span className="italic text-signal">something</span>.
           </h2>
-          <div className="mt-12 grid gap-8 md:grid-cols-3">
+          <div className="mt-10 grid gap-8 md:grid-cols-3">
             <div>
-              <p className="spec mb-2 text-bone/40">Email</p>
-              <a
-                href={`mailto:${s.email}`}
-                className="text-lg font-medium text-bone hover:text-signal transition-colors"
-              >
+              <p className="spec text-bone/50">Email</p>
+              <a href={`mailto:${s.email}`} className="mt-1 block text-lg hover:text-signal">
                 {s.email}
               </a>
             </div>
             <div>
-              <p className="spec mb-2 text-bone/40">Based</p>
-              <p className="text-lg text-bone/80">{s.location}</p>
+              <p className="spec text-bone/50">Based</p>
+              <p className="mt-1 text-lg">{s.location}</p>
             </div>
             <div>
-              <p className="spec mb-2 text-bone/40">Links</p>
-              <ul className="space-y-1">
+              <p className="spec text-bone/50">Elsewhere</p>
+              <ul className="mt-1 space-y-1">
                 {s.social?.map((link) => (
                   <li key={link.label}>
                     <a
                       href={link.url}
                       target="_blank"
                       rel="noreferrer"
-                      className="text-lg text-bone/70 hover:text-signal transition-colors"
+                      className="text-lg hover:text-signal"
                     >
                       {link.label} ↗
                     </a>
@@ -63,9 +61,9 @@ export async function Footer() {
         </div>
       </section>
 
-      <div className="mx-auto flex max-w-[1800px] flex-col gap-3 px-5 py-6 md:flex-row md:items-center md:justify-between md:px-10">
-        <p className="spec text-bone/40">© {year} Finn Bennett / Overlook Studio</p>
-        <p className="spec text-bone/25">Next.js + Sanity · Deployed on Vercel</p>
+      <div className="mx-auto flex max-w-[1800px] flex-col gap-4 px-5 py-6 md:flex-row md:items-center md:justify-between md:px-10">
+        <p className="spec text-bone/60">© {year} Finn Bennett / Overlook Studio</p>
+        <p className="spec text-bone/40">Built with Next.js + Sanity. Deployed on Vercel.</p>
       </div>
     </footer>
   );

@@ -25,7 +25,11 @@ export function AltitudeSection({ altitude }: { altitude: Altitude }) {
               </p>
               <p
                 className={`spec ${
-                  isFlight ? 'text-signal' : 'text-signal'
+                  altitude.level === 'ground'
+                    ? 'text-signal'
+                    : altitude.level === 'studio'
+                    ? 'text-acid'
+                    : 'text-plum'
                 }`}
               >
                 Altitude {altitude.level === 'ground' ? '01' : altitude.level === 'studio' ? '02' : '03'}
@@ -100,7 +104,7 @@ export function AltitudeSection({ altitude }: { altitude: Altitude }) {
                 className="object-cover"
               />
               <div className="absolute bottom-4 left-4 right-4 flex items-end justify-between">
-                <span className="spec rounded-full bg-ink/80 px-3 py-1 text-bone">
+                <span className="spec rounded-full bg-ink/85 px-3 py-1 text-bone backdrop-blur">
                   {altitude.heroImage.alt || altitude.title}
                 </span>
               </div>

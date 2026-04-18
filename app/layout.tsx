@@ -1,23 +1,21 @@
 import type { Metadata } from 'next';
-import { Syne, DM_Sans, Space_Mono } from 'next/font/google';
+import { Fraunces, Space_Grotesk, JetBrains_Mono } from 'next/font/google';
 import './globals.css';
 
-// Syne is a variable font — all weights (400–800) load by default; no explicit weight needed
-const display = Syne({
+const display = Fraunces({
   subsets: ['latin'],
   variable: '--font-display',
   display: 'swap',
 });
 
-const sans = DM_Sans({
+const sans = Space_Grotesk({
   subsets: ['latin'],
   variable: '--font-sans',
   display: 'swap',
 });
 
-const mono = Space_Mono({
+const mono = JetBrains_Mono({
   subsets: ['latin'],
-  weight: ['400', '700'],
   variable: '--font-mono',
   display: 'swap',
 });
