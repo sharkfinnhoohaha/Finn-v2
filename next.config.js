@@ -9,9 +9,6 @@ const nextConfig = {
       { protocol: 'https', hostname: 'images.unsplash.com' },
     ],
   },
-  experimental: {
-    taint: true,
-  },
 };
 
 module.exports = nextConfig;

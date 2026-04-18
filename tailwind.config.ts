@@ -5,7 +5,6 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        // warm off-black -> bone. inspired by cockpit panels + film negatives
         ink: {
           DEFAULT: '#0C0C0B',
           950: '#0C0C0B',
@@ -19,7 +18,6 @@ const config: Config = {
           200: '#E8E2D4',
           300: '#C9C2B2',
         },
-        // aviation sectional chart amber. the only color. used sparingly.
         signal: {
           DEFAULT: '#FF6B1A',
           soft: '#E8A66B',
@@ -35,7 +33,6 @@ const config: Config = {
         crushed: '-0.08em',
       },
       fontSize: {
-        // display scale
         'mega': ['clamp(4rem, 18vw, 22rem)', { lineHeight: '0.82', letterSpacing: '-0.05em' }],
         'giga': ['clamp(3rem, 12vw, 14rem)', { lineHeight: '0.85', letterSpacing: '-0.04em' }],
       },

@@ -8,7 +8,7 @@ export default function SiteLayout({ children }: { children: React.ReactNode }) 
       <div className="grain">
         <Navigation />
         <main>{children}</main>
-        {/* @ts-expect-error Async Server Component */}
+
         <Footer />
       </div>
     </SmoothScroll>
