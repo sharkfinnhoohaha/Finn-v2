@@ -53,8 +53,19 @@ gh repo create finn-portfolio --private --source=. --push
 npx sanity@latest init --env
 # Choose: "Create new project"
 # Dataset: production
-# This writes NEXT_PUBLIC_SANITY_PROJECT_ID to .env.local
+# This writes NEXT_PUBLIC_SANITY_PROJECT_ID and NEXT_PUBLIC_SANITY_DATASET to .env.local
 ```
+
+Then confirm `.env.local` contains:
+
+```bash
+NEXT_PUBLIC_SANITY_PROJECT_ID=your_project_id
+NEXT_PUBLIC_SANITY_DATASET=production
+NEXT_PUBLIC_SANITY_API_VERSION=2026-03-01
+SANITY_REVALIDATE_SECRET=your_random_secret
+```
+
+The repo includes `sanity.cli.ts`, so Sanity CLI commands work directly from this project root.
 
 **Add env vars to Vercel:**
 
