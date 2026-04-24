@@ -15,7 +15,9 @@ export const momentsQuery = groq`*[_type == "moment"] | order(order asc){
   image{..., "url": asset->url, "lqip": asset->metadata.lqip, "alt": alt}
 }`;
 
-export const featuredProjectsQuery = groq`*[_type == "project" && featured == true] | order(order asc)[0...6]{
+// Featured projects surface first, then everything else. No hard filter — every
+// project you create in Sanity will show up in the home grid (capped at 6).
+export const featuredProjectsQuery = groq`*[_type == "project"] | order(featured desc, order asc, year desc)[0...6]{
   _id, title, client, year, role, "slug": slug.current, summary, stack, url,
   cover{..., "url": asset->url, "lqip": asset->metadata.lqip, "alt": alt}
 }`;
@@ -25,7 +27,8 @@ export const allProjectsQuery = groq`*[_type == "project"] | order(year desc, or
   cover{..., "url": asset->url, "lqip": asset->metadata.lqip, "alt": alt}
 }`;
 
-export const featuredReleasesQuery = groq`*[_type == "release" && featured == true] | order(releaseDate desc)[0...6]{
+// Same approach for releases — featured first, then everything, capped at 6.
+export const featuredReleasesQuery = groq`*[_type == "release"] | order(featured desc, releaseDate desc)[0...6]{
   _id, title, artist, role, kind, releaseDate, listenUrl, signalChain,
   "slug": slug.current, notes,
   artwork{..., "url": asset->url, "lqip": asset->metadata.lqip, "alt": alt}

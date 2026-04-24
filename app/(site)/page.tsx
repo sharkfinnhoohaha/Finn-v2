@@ -37,6 +37,9 @@ export const revalidate = 60;
 
 async function getData() {
   const hasSanity = !!process.env.NEXT_PUBLIC_SANITY_PROJECT_ID;
+
+  // No Sanity configured → use the fallback sample content so the site still
+  // renders in dev. This is the ONLY path that uses placeholder data.
   if (!hasSanity) {
     return {
       settings: FALLBACK_SETTINGS,
@@ -45,9 +48,13 @@ async function getData() {
       projects: FALLBACK_PROJECTS,
       releases: FALLBACK_RELEASES,
       logbook: FALLBACK_LOGBOOK,
+      usingFallback: true,
     };
   }
 
+  // Sanity is configured → trust what it returns. An empty result means the
+  // user hasn't added that document type yet; show nothing rather than
+  // overriding with hardcoded placeholders.
   try {
     const [settings, altitudes, moments, projects, releases, logbook] = await Promise.all([
       sanityFetch<Settings>({ query: settingsQuery }),
@@ -60,21 +67,23 @@ async function getData() {
 
     return {
       settings: settings ?? FALLBACK_SETTINGS,
-      altitudes: altitudes?.length ? altitudes : FALLBACK_ALTITUDES,
-      moments: moments?.length ? moments : FALLBACK_MOMENTS,
-      projects: projects?.length ? projects : FALLBACK_PROJECTS,
-      releases: releases?.length ? releases : FALLBACK_RELEASES,
-      logbook: logbook?.length ? logbook : FALLBACK_LOGBOOK,
+      altitudes: altitudes ?? [],
+      moments: moments ?? [],
+      projects: projects ?? [],
+      releases: releases ?? [],
+      logbook: logbook ?? [],
+      usingFallback: false,
     };
   } catch (err) {
-    console.warn('Sanity fetch failed, using fallback content', err);
+    console.warn('Sanity fetch failed, rendering empty sections', err);
     return {
       settings: FALLBACK_SETTINGS,
-      altitudes: FALLBACK_ALTITUDES,
-      moments: FALLBACK_MOMENTS,
-      projects: FALLBACK_PROJECTS,
-      releases: FALLBACK_RELEASES,
-      logbook: FALLBACK_LOGBOOK,
+      altitudes: [],
+      moments: [],
+      projects: [],
+      releases: [],
+      logbook: [],
+      usingFallback: false,
     };
   }
 }

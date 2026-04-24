@@ -6,48 +6,37 @@ import type { Altitude } from '@/lib/types';
 
 export function AltitudeSection({ altitude }: { altitude: Altitude }) {
   const isFlight = altitude.level === 'flight';
-  const isStudio = altitude.level === 'studio';
+  const altitudeIndex =
+    altitude.level === 'ground' ? '01' : altitude.level === 'studio' ? '02' : '03';
 
   return (
     <section
       id={altitude.level}
-      className={`relative overflow-hidden ${
-        isFlight ? 'bg-ink text-bone' : 'bg-bone text-ink'
-      }`}
+      className={`relative ${isFlight ? 'bg-ink text-bone' : 'bg-bone text-ink'}`}
     >
-      <div className="mx-auto grid max-w-[1800px] gap-12 px-5 py-24 md:grid-cols-12 md:gap-10 md:px-10 md:py-40">
+      <div className="mx-auto grid max-w-[1400px] gap-12 px-5 py-24 md:grid-cols-12 md:gap-10 md:px-8 md:py-32">
         {/* left column — spec + intro */}
         <div className="md:col-span-4 md:col-start-1">
           <div className="sticky top-28 space-y-8">
             <div className="space-y-2">
-              <p className={`spec ${isFlight ? 'text-bone/60' : 'text-ink/60'}`}>
-                {altitude.callsign}
-              </p>
-              <p
-                className={`spec ${
-                  altitude.level === 'ground'
-                    ? 'text-signal'
-                    : altitude.level === 'studio'
-                    ? 'text-acid'
-                    : 'text-plum'
-                }`}
-              >
-                Altitude {altitude.level === 'ground' ? '01' : altitude.level === 'studio' ? '02' : '03'}
+              <p className={`spec ${isFlight ? 'text-bone/50' : 'text-ink/50'}`}>
+                Altitude {altitudeIndex}
+                {altitude.callsign ? ` / ${altitude.callsign}` : ''}
               </p>
             </div>
 
             {altitude.intro && (
-              <p className={`text-lg leading-snug ${isFlight ? 'text-bone/80' : 'text-ink/80'}`}>
+              <p className={`font-sans text-base leading-relaxed ${isFlight ? 'text-bone/80' : 'text-ink/75'}`}>
                 {altitude.intro}
               </p>
             )}
 
             {altitude.stats && altitude.stats.length > 0 && (
-              <dl className="space-y-0">
+              <dl>
                 {altitude.stats.map((s) => (
                   <div
                     key={s.label}
-                    className={`flex items-baseline justify-between border-b py-2 ${
+                    className={`flex items-baseline justify-between border-b py-2.5 ${
                       isFlight ? 'border-bone/15' : 'border-ink/15'
                     }`}
                   >
@@ -62,23 +51,20 @@ export function AltitudeSection({ altitude }: { altitude: Altitude }) {
           </div>
         </div>
 
-        {/* right column — stacked title + image */}
+        {/* right column — title + image */}
         <div className="md:col-span-8 md:col-start-5">
           <motion.h2
-            initial={{ opacity: 0, y: 60 }}
+            initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: '-20%' }}
-            transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
-            className={`font-display text-giga tracking-crushed ${
-              isStudio ? 'italic' : ''
-            }`}
-            style={{ lineHeight: 0.9 }}
+            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+            className="font-display text-giga tracking-tightest"
           >
             {altitude.title}
             {altitude.subtitle && (
               <span
-                className={`mt-2 block text-4xl not-italic leading-tight tracking-tight md:text-6xl ${
-                  isFlight ? 'text-bone/40' : 'text-ink/30'
+                className={`mt-3 block text-lg font-normal tracking-normal md:text-xl ${
+                  isFlight ? 'text-bone/50' : 'text-ink/50'
                 }`}
               >
                 {altitude.subtitle}
@@ -88,11 +74,11 @@ export function AltitudeSection({ altitude }: { altitude: Altitude }) {
 
           {altitude.heroImage?.url && (
             <motion.div
-              initial={{ opacity: 0, y: 40 }}
+              initial={{ opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-10%' }}
-              transition={{ duration: 1.1, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
-              className="tile relative mt-10 aspect-[16/10] w-full overflow-hidden md:mt-16"
+              transition={{ duration: 0.9, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
+              className="tile relative mt-10 aspect-[16/10] w-full overflow-hidden md:mt-14"
             >
               <Image
                 src={altitude.heroImage.url}
@@ -103,11 +89,6 @@ export function AltitudeSection({ altitude }: { altitude: Altitude }) {
                 blurDataURL={altitude.heroImage.lqip}
                 className="object-cover"
               />
-              <div className="absolute bottom-4 left-4 right-4 flex items-end justify-between">
-                <span className="spec rounded-full bg-ink/85 px-3 py-1 text-bone backdrop-blur">
-                  {altitude.heroImage.alt || altitude.title}
-                </span>
-              </div>
             </motion.div>
           )}
         </div>

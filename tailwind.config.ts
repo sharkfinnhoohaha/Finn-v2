@@ -6,43 +6,35 @@ const config: Config = {
     extend: {
       colors: {
         ink: {
-          DEFAULT: '#0A0A0A',
+          DEFAULT: '#111111',
           950: '#0A0A0A',
-          900: '#131312',
-          800: '#1C1C1A',
-          700: '#2A2A27',
+          900: '#111111',
+          800: '#1F1F1F',
+          700: '#2A2A2A',
         },
         bone: {
-          DEFAULT: '#F2EFE7',
-          100: '#F2EFE7',
-          200: '#E7E2D4',
-          300: '#C7C1B1',
+          DEFAULT: '#F5F4F1',
+          100: '#F5F4F1',
+          200: '#EBE9E3',
+          300: '#D4D2CB',
         },
         signal: {
-          DEFAULT: '#FF3B2F',
-          soft: '#FFB4AC',
-        },
-        acid: {
-          DEFAULT: '#E6FF48',
-          soft: '#F0FF9E',
-        },
-        plum: {
-          DEFAULT: '#3B2DE6',
-          soft: '#B7B0FF',
+          DEFAULT: '#D93025',
+          soft: '#F2B8B3',
         },
       },
       fontFamily: {
-        display: ['var(--font-display)', 'serif'],
+        display: ['var(--font-mono)', 'ui-monospace', 'monospace'],
         sans: ['var(--font-sans)', 'system-ui', 'sans-serif'],
         mono: ['var(--font-mono)', 'ui-monospace', 'monospace'],
       },
       letterSpacing: {
-        tightest: '-0.05em',
-        crushed: '-0.08em',
+        tightest: '-0.04em',
+        tightish: '-0.02em',
       },
       fontSize: {
-        'mega': ['clamp(4rem, 18vw, 22rem)', { lineHeight: '0.82', letterSpacing: '-0.05em' }],
-        'giga': ['clamp(3rem, 12vw, 14rem)', { lineHeight: '0.85', letterSpacing: '-0.04em' }],
+        'mega': ['clamp(2.75rem, 9vw, 8rem)', { lineHeight: '0.95', letterSpacing: '-0.04em' }],
+        'giga': ['clamp(2.25rem, 6vw, 5.5rem)', { lineHeight: '1', letterSpacing: '-0.03em' }],
       },
     },
   },

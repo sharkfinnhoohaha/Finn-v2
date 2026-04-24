@@ -1,4 +1,3 @@
-import Link from 'next/link';
 import { sanityFetch } from '@/sanity/client';
 import { settingsQuery } from '@/sanity/queries';
 import { FALLBACK_SETTINGS } from '@/lib/fallback';
@@ -20,36 +19,35 @@ export async function Footer() {
 
   return (
     <footer className="bg-ink text-bone">
-      {/* giant final mark */}
-      <section className="relative border-b border-bone/10 px-5 pt-20 pb-12 md:px-10 md:pt-28">
-        <div className="mx-auto max-w-[1800px]">
-          <p className="spec mb-6 text-bone/60">Contact / 34.2749°N 119.2290°W</p>
-          <h2 className="font-display text-mega text-bone">
-            Let&rsquo;s<br />
-            <span className="italic text-acid">make</span>{' '}
-            <span className="italic text-signal">something</span>.
-          </h2>
-          <div className="mt-10 grid gap-8 md:grid-cols-3">
+      <section className="border-b border-bone/10 px-5 pt-24 pb-16 md:px-8 md:pt-32">
+        <div className="mx-auto max-w-[1400px]">
+          <p className="spec mb-6 text-bone/55">Contact · 34.2749°N 119.2290°W</p>
+          <h2 className="font-display text-mega">Let&rsquo;s make something.</h2>
+
+          <div className="mt-14 grid gap-10 border-t border-bone/10 pt-10 md:grid-cols-3">
             <div>
-              <p className="spec text-bone/50">Email</p>
-              <a href={`mailto:${s.email}`} className="mt-1 block text-lg hover:text-signal">
+              <p className="spec text-bone/45">Email</p>
+              <a
+                href={`mailto:${s.email}`}
+                className="font-mono mt-2 block text-base hover:text-signal md:text-lg"
+              >
                 {s.email}
               </a>
             </div>
             <div>
-              <p className="spec text-bone/50">Based</p>
-              <p className="mt-1 text-lg">{s.location}</p>
+              <p className="spec text-bone/45">Based</p>
+              <p className="font-mono mt-2 text-base md:text-lg">{s.location}</p>
             </div>
             <div>
-              <p className="spec text-bone/50">Elsewhere</p>
-              <ul className="mt-1 space-y-1">
+              <p className="spec text-bone/45">Elsewhere</p>
+              <ul className="mt-2 space-y-1">
                 {s.social?.map((link) => (
                   <li key={link.label}>
                     <a
                       href={link.url}
                       target="_blank"
                       rel="noreferrer"
-                      className="text-lg hover:text-signal"
+                      className="font-mono text-base hover:text-signal md:text-lg"
                     >
                       {link.label} ↗
                     </a>
@@ -61,9 +59,9 @@ export async function Footer() {
         </div>
       </section>
 
-      <div className="mx-auto flex max-w-[1800px] flex-col gap-4 px-5 py-6 md:flex-row md:items-center md:justify-between md:px-10">
-        <p className="spec text-bone/60">© {year} Finn Bennett / Overlook Studio</p>
-        <p className="spec text-bone/40">Built with Next.js + Sanity. Deployed on Vercel.</p>
+      <div className="mx-auto flex max-w-[1400px] flex-col gap-3 px-5 py-6 md:flex-row md:items-center md:justify-between md:px-8">
+        <p className="spec text-bone/55">© {year} Finn Bennett / Overlook Studio</p>
+        <p className="spec text-bone/35">Next.js · Sanity · Vercel</p>
       </div>
     </footer>
   );
