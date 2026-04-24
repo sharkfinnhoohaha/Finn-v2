@@ -5,12 +5,9 @@ import { Footer } from '@/app/components/footer';
 export default function SiteLayout({ children }: { children: React.ReactNode }) {
   return (
     <SmoothScroll>
-      <div className="grain">
-        <Navigation />
-        <main>{children}</main>
-
-        <Footer />
-      </div>
+      <Navigation />
+      <main>{children}</main>
+      <Footer />
     </SmoothScroll>
   );
 }

@@ -14,35 +14,31 @@ export function Navigation() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-        scrolled ? 'bg-bone/85 backdrop-blur-md' : ''
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        scrolled ? 'border-b border-ink/10 bg-bone/85 backdrop-blur-md' : ''
       }`}
     >
-      <div className="mx-auto flex max-w-[1800px] items-center justify-between px-5 py-4 md:px-10 md:py-5">
+      <div className="mx-auto flex max-w-[1400px] items-center justify-between px-5 py-4 md:px-8 md:py-5">
         <Link href="/" className="spec flex items-center gap-2 text-ink">
           <span className="live-dot inline-block h-1.5 w-1.5 rounded-full bg-signal" />
-          Finn Bennett — v2026
+          Finn Bennett
         </Link>
         <nav className="hidden items-center gap-8 md:flex">
-          <Link href="/#ground" className="spec text-ink/70 hover:text-ink">
+          <Link href="/#ground" className="spec text-ink/60 hover:text-ink">
             Ground
           </Link>
-          <Link href="/#studio" className="spec text-ink/70 hover:text-ink">
+          <Link href="/#studio" className="spec text-ink/60 hover:text-ink">
             Studio
           </Link>
-          <Link href="/#flight" className="spec text-ink/70 hover:text-ink">
+          <Link href="/#flight" className="spec text-ink/60 hover:text-ink">
             Flight
           </Link>
-          <Link href="/about" className="spec text-ink/70 hover:text-ink">
+          <Link href="/about" className="spec text-ink/60 hover:text-ink">
             About
           </Link>
         </nav>
-        <a
-          href="mailto:finn@overlook.studio"
-          className="spec flex items-center gap-2 text-ink"
-        >
-          <span className="hidden md:inline">Contact</span>
-          <span aria-hidden>↗</span>
+        <a href="mailto:finn@overlook.studio" className="spec text-ink">
+          Contact <span aria-hidden>↗</span>
         </a>
       </div>
     </header>
